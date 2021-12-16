@@ -8,10 +8,17 @@
   <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
   <link rel="stylesheet" href="components/loader.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/mb.js"></script>
   <script src="components/loader.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/mb.js"></script>
-  var save_mb = function(score){ // ユーザー名取得 var name = prompt("Please write your name."); };
+  var save_mb = function(score){ 
+  var name = prompt("Please write your name."); };   
+  var Score = ncmb.DataStore("Score"); new Score().set("name", name)
+           .set("score", score)
+           .save();
+};
+
+
 </head>
 
 <body>
